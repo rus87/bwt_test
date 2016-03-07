@@ -1,0 +1,61 @@
+h1
+{
+    text-align: center;
+}
+#form
+{
+    background-color: azure;
+    width: 30%;
+    padding: 20px;
+    margin:  auto;
+    border: 1px solid grey;
+    border-radius: 3px;
+}
+#form_fb, #feedbacks
+{
+    background-color: azure;
+    width: 60%;
+    padding: 20px;
+    margin:  auto;
+    border: 1px solid grey;
+    border-radius: 3px;
+}
+select
+{
+    width: 130px !important;
+}
+
+.wide, .temp, .preassure, .speed, .humm, .comfort
+{
+    font-weight: lighter;   
+}
+#wthr
+{
+    border: 1px solid grey;
+    width: 700px;
+    margin:  auto;
+    padding: 20px;
+    background-color: azure;
+    border-radius: 3px;
+}
+#feedbacks
+{
+    
+}
+
+#menu
+{
+    width: 200px;
+    background-color: azure;
+    position:relative;
+    top: 150px;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+#cont
+{
+    position: relative;
+    margin: auto;
+    top: -100px;
+    width: 700px;
+}
