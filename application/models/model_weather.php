@@ -22,7 +22,7 @@ class Model_weather extends Model
             file_put_contents($_SERVER['DOCUMENT_ROOT']."/bwt_test/data/weather_last_updated.txt", $last_update, LOCK_EX);
         }
         
-        if(!file_exists($_SERVER['DOCUMENT_ROOT']."/bwt_test/data/weather_data.txt")) $this->update_data();
+        if(!file_exists($_SERVER['DOCUMENT_ROOT']."/bwt_test/data/weather_data.php")) $this->update_data();
             
         $current = explode(',', $current);
         $last_update = explode(',', $last_update);
