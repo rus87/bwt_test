@@ -1,5 +1,4 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT']."/bwt_test/application/core/model.php");
 
 class Model_weather extends Model
 {  
