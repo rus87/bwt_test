@@ -1,4 +1,6 @@
-<div id="form">
+
+<script src="js/signup_script.js"></script>
+<div id="form" role="form">
     <div class="form-group">
         <label>Имя: 
             <input type="text" id="name" class="form-control" placeholder="Введите имя..." required>         </label>

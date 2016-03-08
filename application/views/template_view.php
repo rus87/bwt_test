@@ -5,6 +5,7 @@
 		<title>BWT TEST</title>
         <link rel="stylesheet" type="text/css" href="/bwt_test/css/style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <script src="js/jquery-2.2.0.js"></script>
 	</head>
 <body>
 <div class="container">
