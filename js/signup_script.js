@@ -31,8 +31,22 @@ $(document).ready(function()
                     data: "data="+User_str,
                     success: function(answer)
                     {
-                        if (answer != 'OK')alert(answer)
-                        else window.location.href = "../";
+                        if(answer != 'OK') 
+                        {
+                            var user_errors = JSON.parse(answer);
+                            var message = "<strong>Ошибка! </strong><ul>";
+                            for(var key in user_errors)
+                                {
+                                    if(user_errors[key] != "OK") message += "<li>"+user_errors[key]+"</li>";
+                                }
+                            message += "</ul>";
+                            
+                            $("#err_list").html(message);
+                            $("#reg_message").slideDown('500');
+                            
+                        }
+                        else alert('Вы успешно зарегистрировались :-)');
+                        
                     },
                     error: function (xhr, ajaxOptions, thrownError) 
                     {
@@ -42,6 +56,13 @@ $(document).ready(function()
             }
         else alert(Check_result);
     });
+    
+    $(".close").click(function()
+    {
+        $("#reg_message").slideUp('500');
+        
+    });
 });
+
         
         

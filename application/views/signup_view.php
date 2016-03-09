@@ -34,3 +34,7 @@
     <button id="send" type="submit" class="btn btn-success">Зарегистрироваться</button>
         
 </div>
+<div id="reg_message" class="alert alert-warning" role="alert">
+    <button class="close" data-dismiss="alert">×</button>
+    <div id="err_list"></div>
+    </div>

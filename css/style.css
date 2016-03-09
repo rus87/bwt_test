@@ -38,9 +38,14 @@ select
     background-color: azure;
     border-radius: 3px;
 }
-#feedbacks
+#reg_message
 {
-    
+    position: relative;
+    margin: auto;
+    width: 400px;
+    margin-top: 30px;
+    border: 1px solid grey;
+    display: none;
 }
 
 #menu
@@ -51,6 +56,7 @@ select
     top: 150px;
     border: 1px solid grey;
     border-radius: 5px;
+    z-index: 100;
 }
 #cont
 {
