@@ -1,30 +1,30 @@
 
-<script src="js/signup_script.js"></script>
 <div id="form" role="form">
+    <form role="form" method="post" action="signup/add_user">
     <div class="form-group">
         <label>Имя: 
-            <input type="text" id="name" class="form-control" placeholder="Введите имя..." required>         </label>
+            <input type="text" name="name" id="name" class="form-control" placeholder="Введите имя..." required>         </label>
     </div>
     <div class="form-group">
         <label>Фамилия: 
-            <input type="text" id="surname" class="form-control" 
+            <input type="text" name="surname" id="surname" class="form-control" 
                    placeholder="Введите фамилию..." required>
         </label>
     </div>
     <div class="form-group">
         <label>E-mail: 
-            <input type="email" id="email" class="form-control" 
+            <input type="email" name="email" id="email" class="form-control" 
                    placeholder="Введите email..." required>
         </label>
     </div>
     <div class="form-group">
         <label>Дата рождения
-            <input type="date" id="birth" class="form-control">
+            <input type="date" name="birth" id="birth" class="form-control">
         </label>
     </div>
     <div class="form-group">
         <label>Ваш пол:
-        <select class="form-control" id="gender">
+        <select class="form-control" id="gender" name="gender">
             <option>Это секрет</option>
             <option>Муж.</option>
             <option>Жен.</option>
@@ -32,9 +32,5 @@
         </label>
     </div>
     <button id="send" type="submit" class="btn btn-success">Зарегистрироваться</button>
-        
+</form>        
 </div>
-<div id="reg_message" class="alert alert-warning" role="alert">
-    <button class="close" data-dismiss="alert">×</button>
-    <div id="err_list"></div>
-    </div>

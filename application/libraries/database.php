@@ -23,8 +23,13 @@ class Database
     function add_new_user($user)
     {
         $q = "INSERT INTO users (name, surname, email, birth, gender) VALUES ('%s', '%s', '%s', '%s', '%s')";
-        $q = sprintf($q, $user->name, $user->surname, $user->email, $user->birth, $user->gender);
+        $q = sprintf($q, $user['name'], $user['surname'], $user['email'], $user['birth'], $user['gender']);
         if(!$this->mysqli->query($q)) die("Error: ".$this->mysqli->error);
             else return "OK";
+    }
+    
+    function add_feedback()
+    {
+        
     }
 }
