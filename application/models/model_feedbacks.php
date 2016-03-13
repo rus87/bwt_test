@@ -1,7 +1,7 @@
 <?php
 class Model_feedbacks extends Model
 {
-    function __construct($data)
+    function __construct($data = null)
     { 
         $this->data = $data;
     }

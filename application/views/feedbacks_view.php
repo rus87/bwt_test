@@ -1,2 +1,4 @@
 <h1>Просмотр отзывов</h1>
-<p><strong>Сергей: </strong>Отличный сайт! Погоду смотреть можно в Запорожье.</p>
+<?php foreach($data as $feedback): ?>
+<p><strong><?php echo $feedback[2] ?>: </strong><?php echo $feedback[1] ?></p>
+<?php endforeach ?>

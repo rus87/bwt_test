@@ -2,10 +2,17 @@
 
 class Controller_feedbacks extends Controller
 {
+    private $feedbacks = array();
     
     function action_index()
     {
-        $this->view->generate('feedbacks_view.php');
+        $this->model = new Model_feedbacks();
+        $this->model->db = new Database;
+        
+        $this->feedbacks = $this->model->db->get_feedbacks();
+        if(!$this->model->db->errors) $this->view->generate('feedbacks_view.php', $this->feedbacks);
+        else $this->view->generate('fail_view.php', $this->model->db->errors);
+        //
     }
     
     function action_add()

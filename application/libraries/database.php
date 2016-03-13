@@ -33,6 +33,15 @@ class Database
         $q = "INSERT INTO feedbacks (name, email, text) VALUES ('%s', '%s', '%s')";
         $q = sprintf($q, $data['name'], $data['email'], $data['text']);
         if(!$this->mysqli->query($q)) $this->errors['add_feedback'] = $this->mysqli->error;
-        
     }
+    
+    function get_feedbacks()
+    {
+        $q = "SELECT * FROM feedbacks ORDER BY id DESC";
+        $result = $this->mysqli->query($q);
+        if(!$result) $this->errors['get_feedbacks'] = $this->mysqli->error;
+        else return mysqli_fetch_all($result);
+    }
+        
+    
 }
