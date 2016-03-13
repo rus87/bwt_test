@@ -1,6 +1,7 @@
 <?php
 class Database
 {
+    public $errors = array();
     private $mysqli;
    
     function __construct()
@@ -20,16 +21,18 @@ class Database
         return $row;
     }
     
-    function add_new_user($user)
+    function add_new_user($data)
     {
         $q = "INSERT INTO users (name, surname, email, birth, gender) VALUES ('%s', '%s', '%s', '%s', '%s')";
-        $q = sprintf($q, $user['name'], $user['surname'], $user['email'], $user['birth'], $user['gender']);
-        if(!$this->mysqli->query($q)) die("Error: ".$this->mysqli->error);
-            else return "OK";
+        $q = sprintf($q, $data['name'], $data['surname'], $data['email'], $data['birth'], $data['gender']);
+        if(!$this->mysqli->query($q)) $this->errors['add_new_user'] = $this->mysqli->error;
     }
     
-    function add_feedback()
+    function add_feedback($data)
     {
+        $q = "INSERT INTO feedbacks (name, email, text) VALUES ('%s', '%s', '%s')";
+        $q = sprintf($q, $data['name'], $data['email'], $data['text']);
+        if(!$this->mysqli->query($q)) $this->errors['add_feedback'] = $this->mysqli->error;
         
     }
 }

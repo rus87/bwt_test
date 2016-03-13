@@ -13,9 +13,8 @@ class Controller_signup extends Controller
         $this->form_data = $this->get_form();   
         
         $this->model = new Model_signup($this->form_data); 
-        $this->model->validate(); 
-        $errors = $this->model->val_errs; 
-        if($this->model->val_errs) $this->view->generate('reg_failed_view.php', $errors);
+        $this->model->validate();  
+        if($this->model->val_errs) $this->view->generate('fail_view.php', $this->model->val_errs);
         else 
         {
             $this->model->db->add_new_user($this->model->data);
