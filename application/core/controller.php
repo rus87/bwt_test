@@ -5,6 +5,8 @@ class Controller
 {
     public $model;
     public $view;
+    public $logged_in;
+    public $data;
     
     function __construct()
     {
@@ -31,6 +33,12 @@ class Controller
             if(array_key_exists('birth', $temp))
                 if(!$temp['birth']) $temp['birth'] = '0000-00-00';
         return $temp;
+    }
+    
+    function auth_check()
+    {
+        $this->logged_in = null;
+        if(isset($_SESSION['user_name'])) $this->logged_in = $_SESSION['user_name'];
     }
 }
 ?>

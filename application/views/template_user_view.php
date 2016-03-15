@@ -8,6 +8,9 @@
 	</head>
 <body>
 <div class="container">
+    <div id="user_private">
+    Вы вошли как <?php echo $user_name  ?> <a href="/bwt_test/login/logout">Выйти</a>
+    </div>
     <div id="menu" >
         <ul class="nav nav-tabs nav-stacked">
             <li><a href="/bwt_test/login">Вход/Регистрация</a></li>

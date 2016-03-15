@@ -16,7 +16,7 @@ class Model
     function check_name()
     {
         if(preg_match_all("/([^A-zА-яуцртчшщхъфыэсью])/i", $this->data['name'])) $error = "Имя должно состоять только из букв."; 
-        if(strlen($this->data['name']) < 3) $error = "Имя должно быть не короче 3 символов.";
+        if(mb_strlen($this->data['name']) <= 3) $error = "Имя должно быть не короче 3 символов.";
         if(isset($error))$this->val_errs['name'] = $error;
     }
     

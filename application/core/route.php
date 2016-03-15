@@ -3,7 +3,7 @@ class Route
 {
     static function Start()
     {
-        $controller_name = 'Main';
+        $controller_name = 'Signup';
 		$action_name = 'index';
         
         $route = explode('/', $_SERVER['REQUEST_URI']);

@@ -5,7 +5,15 @@ class Controller_signup extends Controller
     
     function action_index()
     {
-        $this->view->generate('signup_view.php');
+        Session :: init();
+        $this->auth_check();
+        if($this->logged_in)
+        {
+            $this->view->template_view = 'template_user_view.php';
+            $this->data['user_name'] = $this->logged_in;
+        }
+        
+        $this->view->generate('signup_view.php', $this->data);
     }
     
     function action_add_user()
