@@ -49,7 +49,7 @@ class Controller_feedbacks extends Controller
                     {
                         $this->model->db = new Database;
                         $this->model->db->add_feedback($this->model->data);
-                        if(!$this->model->db->errors) $this->view->generate('feedback_success_view.php');
+                        if(!$this->model->db->errors) $this->view->generate('feedback_success_view.php', $this->data);
                         else $this->view->generate('fail_view.php', $this->model->db->errors);
                     } 
                 }
