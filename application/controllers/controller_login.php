@@ -30,11 +30,16 @@ class Controller_login extends Controller
                 }
                 else 
                 {
-                    $error[] = 'Нет пользователя с таким e-mail.';
-                    $this->view->generate('fail_view.php', $error);
+                    $this->data['errors'] = array('Нет пользователя с таким e-mail.');
+                    $this->view->generate('fail_view.php', $this->data);
                 }
             }
-            else $this->view->generate('fail_view.php', $this->model->val_errs);
+            else
+            {
+                $this->data['errors'] = $this->model->val_errs;
+                $this->view->generate('fail_view.php', $this->data);
+            }
+                
         }
         else $this->view->generate('login_view.php', $this->data);
     }

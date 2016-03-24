@@ -22,7 +22,12 @@ class Controller_signup extends Controller
         
         $this->model = new Model_signup($this->form_data); 
         $this->model->validate();  
-        if($this->model->val_errs) $this->view->generate('fail_view.php', $this->model->val_errs);
+        if($this->model->val_errs)
+        {
+            $this->data['errors'] = $this->model->val_errs;
+            $this->view->generate('fail_view.php', $this->data);
+        }
+        
         else 
         {
             $this->model->db->add_new_user($this->model->data);

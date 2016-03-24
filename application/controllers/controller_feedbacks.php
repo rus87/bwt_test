@@ -20,7 +20,7 @@ class Controller_feedbacks extends Controller
         }
         else
         {
-            $this->data = array('Надо бы авторизоваться.');
+            $this->data['errors'] = array('Надо бы авторизоваться.');
             $this->view->generate('fail_view.php', $this->data);
         }
         
@@ -44,19 +44,28 @@ class Controller_feedbacks extends Controller
                     $this->model = new Model_feedbacks($this->get_form());
                     $this->model->validate();
 
-                    if($this->model->val_errs) $this->view->generate('fail_view.php', $this->model->val_errs);
+                    if($this->model->val_errs)
+                    {
+                        $this->data['errors'] = $this->model->val_errs;
+                        $this->view->generate('fail_view.php', $this->data);
+                    }
+                        
                     else
                     {
                         $this->model->db = new Database;
                         $this->model->db->add_feedback($this->model->data);
                         if(!$this->model->db->errors) $this->view->generate('feedback_success_view.php', $this->data);
-                        else $this->view->generate('fail_view.php', $this->model->db->errors);
+                        else
+                        {
+                            $this->data['errors'] = $this->model->db->errors;
+                            $this->view->generate('fail_view.php', $this->data);
+                        }
                     } 
                 }
                 else 
                 {
-                    $data[] = 'Неправильная капча.';
-                    $this->view->generate('fail_view.php', $data);
+                    $this->data['errors'] = array('Неправильная капча.');
+                    $this->view->generate('fail_view.php', $this->data);
                 }
             }        
         

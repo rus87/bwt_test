@@ -21,7 +21,7 @@ class Controller_weather extends Controller
         }
         else
         {
-            $this->data = array('Надо бы авторизоваться.');
+            $this->data['errors'] = array('Надо бы авторизоваться.');
             $this->view->generate('fail_view.php', $this->data);
         }
          
